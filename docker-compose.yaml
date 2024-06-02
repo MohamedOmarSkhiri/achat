@@ -11,6 +11,14 @@ services:
       - 3306:3306
     volumes:
       - db:/var/lib/mysql
+  prometheus-mysql-exporter:
+    image: prom/mysqld-exporter
+    ports:
+      - 9104:9104
+    environment:
+      DATA_SOURCE_NAME: "root:root@(mysqldb:3306)/"
+    depends_on:
+      - mysqldb
   app-achat:
     depends_on:
       - mysqldb
