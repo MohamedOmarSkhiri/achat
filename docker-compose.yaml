@@ -16,7 +16,7 @@ services:
     ports:
       - 9104:9104
     environment:
-      DATA_SOURCE_NAME: "root:root@(mysqldb:3306)/"
+      DATA_SOURCE_NAME: "root:root@(mysqldb:3306)/achat_db"
     depends_on:
       - mysqldb
   app-achat:
