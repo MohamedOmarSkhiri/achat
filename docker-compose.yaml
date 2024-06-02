@@ -16,12 +16,12 @@ services:
     ports:
       - 9104:9104
     environment:
-      - DATA_SOURCE_NAME: "root:root@(mysqldb:3306)/achat_db"
+      DATA_SOURCE_NAME: "root:root@(mysqldb:3306)/achat_db"
     command:
       - --config.my-cnf=/cfg/.my.cnf
       - --mysqld.address=mysqldb:3306
     volumes:
-      - "./.my.cnf:/cfg/.my.cnf"
+      - ./.my.cnf:/cfg/.my.cnf
     depends_on:
       - mysqldb
   app-achat:
