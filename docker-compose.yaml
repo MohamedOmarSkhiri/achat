@@ -17,8 +17,6 @@ services:
       - 9104:9104
     environment:
       - DATA_SOURCE_NAME: "root:root@(mysqldb:3306)/achat_db"
-    volumes:
-      - /home/vagrant/mysql-exporter/.my.cnf:/root/.my.cnf
     depends_on:
       - mysqldb
   app-achat:
